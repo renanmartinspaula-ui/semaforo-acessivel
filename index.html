@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Semáforo Inclusivo</title>
+  <title>Semáforo Inclusivo e Acessível</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,13 +11,21 @@
     <h1>Semáforo Inclusivo e Acessível</h1>
   </header>
 
-  <main>
-    <div class="container">
-      <canvas id="canvasSemaforo" width="200" height="420"></canvas>
+  <main class="container">
+    <canvas id="canvasSemaforo" width="200" height="420" aria-label="Semáforo visual"></canvas>
 
-      <div class="timer-box">
-        Tempo restante: <span id="timer">10</span>s
-      </div>
+    <div class="timer-box" aria-live="polite">
+      Tempo restante: <span id="timer">10</span>s
+    </div>
+
+    <div class="controles">
+      <button id="btnTempoExtra" onclick="solicitarTempoExtra()">
+        ➕ Solicitar Mais Tempo (Idosos / Cadeirantes)
+      </button>
+
+      <button id="btnAltoContraste" onclick="alternarAltoContraste()">
+        👁️ Modo Alto Contraste / Daltônicos
+      </button>
     </div>
   </main>
 
